@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 
-app.get(express.static(`${__dirname}/index.html`))
+app.use(express.static(`${__dirname}/public`))
 
 
 app.listen(4000,
