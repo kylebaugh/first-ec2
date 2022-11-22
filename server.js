@@ -16,6 +16,15 @@ const rollbar = new Rollbar({
 
 rollbar.log('Hello world!')
 
+let myObj = {
+   string: 'It worked'
+}
+
+app.get('/api/cat', (req, res) => {
+   rollbar.log('button hit')
+   res.status(200).send(myObj)
+})
+
 
 app.listen(4000,
    () => console.log(`server running on 4000`)
